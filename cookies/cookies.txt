@@ -1,3 +1,0 @@
-password=tomas123; expires=Sun, 1-Oct-2017 23:2:14 GMT
-PHPSESSID=C3gZluCOwPHfbSlIaIIwE1; 
-username=tomatereloco; expires=Sun, 1-Oct-2017 23:2:14 GMT

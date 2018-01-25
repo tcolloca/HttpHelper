@@ -226,11 +226,11 @@ public class HttpHelper {
 	}
 
 	private void delay() {
-		if (minDelay > 0 && maxDelay > 0 && minDelay < maxDelay) {
+		if (minDelay > 0 && maxDelay > 0 && minDelay <= maxDelay) {
 			int minMillis = (int) (minDelay * 1000);
 			int maxMillis = (int) (maxDelay * 1000);
 			try {
-				Thread.sleep(new Random().nextInt(maxMillis - minMillis) + minMillis);
+				Thread.sleep(new Random().nextInt(maxMillis - minMillis + 1) + minMillis - 1);
 			} catch (InterruptedException e) {
 				throw new IllegalStateException(e);
 			}
