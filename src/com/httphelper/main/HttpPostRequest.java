@@ -3,7 +3,7 @@ package com.httphelper.main;
 
 class HttpPostRequest extends HttpRequest {
 
-	HttpPostRequest(HttpHelper helper) {
-		super(helper, HttpType.POST);
-	}
+  HttpPostRequest(HttpHelper helper) {
+    super(helper, HttpType.POST);
+  }
 }
