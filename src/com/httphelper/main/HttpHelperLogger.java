@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 public class HttpHelperLogger {
 
   private static final DateTimeFormatter formatter =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd-hh-mm-ss");
+      DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm-ss");
 
   static void log(HttpResponse response, String dirPathName) {
     log(response,
