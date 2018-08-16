@@ -27,8 +27,10 @@ public class HttpHelperLogger {
       if (Files.notExists(path.getParent())) {
         Files.createDirectory(path.getParent());
       }
-      Files.write(path, obj.toString().getBytes(), StandardOpenOption.CREATE,
-          StandardOpenOption.TRUNCATE_EXISTING);
+      if (obj != null) {
+        Files.write(path, obj.toString().getBytes(), StandardOpenOption.CREATE,
+            StandardOpenOption.TRUNCATE_EXISTING);
+      }
     } catch (IOException e) {
       throw new HttpHelperException("Error while saving logs", e);
     }
