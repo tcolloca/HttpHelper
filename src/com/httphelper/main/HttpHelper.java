@@ -47,11 +47,11 @@ public class HttpHelper {
   public static void log(HttpRequest request) {
     HttpHelperLogger.log(request, logPath);
   }
-  
+
   public static void log(HttpResponse response) {
     HttpHelperLogger.log(response, logPath);
   }
-  
+
   public HttpHelper(String host) {
     this(host, 80);
   }
@@ -320,6 +320,7 @@ public class HttpHelper {
     byteInfo.size += n;
   }
 
+  @Override
   public HttpHelper clone() {
     return clone(host, port);
   }

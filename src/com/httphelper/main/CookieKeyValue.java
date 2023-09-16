@@ -48,4 +48,12 @@ class CookieKeyValue {
       return false;
     return true;
   }
+
+  String getKey() {
+    return key;
+  }
+
+  String getValue() {
+    return value;
+  }
 }

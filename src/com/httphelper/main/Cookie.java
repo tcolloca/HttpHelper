@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 
-class Cookie {
+public class Cookie {
 
   private static final List<DateTimeFormatter> FORMATTERS =
       Arrays.asList(DateTimeFormatter.ofPattern("EEE, d-MMM-uuuu H:m:s z", Locale.ENGLISH));
@@ -19,6 +19,11 @@ class Cookie {
 
   private final CookieKeyValue cookieKeyValue;
   private final Optional<ZonedDateTime> expirationDate;
+
+  public Cookie(String key, String value, Optional<ZonedDateTime> expirationDate) {
+    this.cookieKeyValue = new CookieKeyValue(key, value);
+    this.expirationDate = expirationDate;
+  }
 
   Cookie(String cookie) {
     String[] strs = cookie.split("; ");
@@ -53,6 +58,18 @@ class Cookie {
 
   String getCookie() {
     return cookieKeyValue.toString();
+  }
+
+  public String getName() {
+    return cookieKeyValue.getKey();
+  }
+
+  public String getValue() {
+    return cookieKeyValue.getValue();
+  }
+
+  public Optional<ZonedDateTime> getExpirationDate() {
+    return expirationDate;
   }
 
   boolean isValid() {
